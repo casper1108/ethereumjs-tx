@@ -231,6 +231,7 @@ class Transaction {
   sign (privateKey) {
     const msgHash = this.hash(false)
     const sig = ethUtil.ecsign(msgHash, privateKey)
+	  console.log("====== ===============")
     if (this._chainId > 0) {
       sig.v += this._chainId * 2 + 8
     }
